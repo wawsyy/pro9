@@ -4,6 +4,7 @@ import type { FhevmInstance } from "./fhevmTypes";
 import { createFhevmInstance } from "./internal/fhevm";
 
 function _assert(condition: boolean, message?: string): asserts condition {
+// 2025-11-16 12:33 - Code update
   if (!condition) {
     const m = message ? `Assertion failed: ${message}` : `Assertion failed.`;
     console.error(m);
