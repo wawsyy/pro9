@@ -41,7 +41,7 @@ describe("EncryptedMoodDiary", function () {
   });
 
   it("starts with zero entries and empty encrypted handles", async function () {
-    expect(await diary.getEntryCount()).to.eq(0);
+    expect(await diary.getEntryCount()).to.eq(0); // Verify initial state
     expect(await diary.getEncryptedTrend()).to.eq(ethers.ZeroHash);
     expect(await diary.getEncryptedTotalScore()).to.eq(ethers.ZeroHash);
   });
