@@ -5,6 +5,7 @@
   "engines": {
     "node": ">=20",
     "npm": ">=7.0.0"
+// 2025-11-16 12:33 - Code update
   },
   "license": "BSD-3-Clause-Clear",
   "homepage": "https://github.com/zama-ai/fhevm-hardhat-template/README.md",
