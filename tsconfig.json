@@ -1,4 +1,4 @@
-{
+﻿{
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
@@ -14,7 +14,7 @@
     "removeComments": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "strict": true,
+    "strict": true, // Enhanced type checking,
     "target": "es2022" // get error cause (ErrorOptions)
   },
   "exclude": ["node_modules"],
