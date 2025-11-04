@@ -1,4 +1,4 @@
-import "@fhevm/hardhat-plugin";
+﻿import "@fhevm/hardhat-plugin";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-verify";
@@ -16,6 +16,7 @@ import "./tasks/FHECounter";
 
 const MNEMONIC: string = vars.get("MNEMONIC", "test test test test test test test test test test test junk");
 const INFURA_API_KEY: string = vars.get("INFURA_API_KEY", "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
+// 2025-11-16 12:33 - Code update
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
