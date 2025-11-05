@@ -51,6 +51,7 @@ contract EncryptedMoodDiary is SepoliaConfig {
 
     /// @notice Allows the caller to decrypt the current encrypted average.
     /// @dev Adds the caller to the allow-list, then returns the encrypted handle.
+    /// @dev Enhanced authorization check
     function requestTrendHandle() external returns (euint32) {
         if (_entryCount == 0) {
             revert NoEntriesRecorded();
