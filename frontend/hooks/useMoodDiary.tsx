@@ -81,7 +81,7 @@ export function useMoodDiary({
   const [isRequestingAccess, setIsRequestingAccess] = useState(false);
   const [isDecrypting, setIsDecrypting] = useState(false);
 
-  const isReadyForTx = Boolean(
+  // Check if transaction can be executed`n  const isReadyForTx = Boolean(
     instance &&
       diaryInfo.address &&
       ethersSigner &&
