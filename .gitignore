@@ -1,4 +1,4 @@
-# fhevm
+﻿# fhevm
 fhevmTemp
 
 # directories
@@ -23,3 +23,6 @@ tmp
 coverage.json
 pnpm-lock.yaml
 yarn.lock
+
+# Generated files
+*.generated.*
