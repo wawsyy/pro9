@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true, // Enhanced type checking,
-    "target": "es2022" // get error cause (ErrorOptions)
+    "target": "es2022", // ECMAScript target version // get error cause (ErrorOptions)
   },
   "exclude": ["node_modules"],
   "files": ["./hardhat.config.ts"],
