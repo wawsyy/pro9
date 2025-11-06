@@ -16,6 +16,7 @@ type DiaryInfo = {
   chainId?: number;
   chainName?: string;
 };
+// 2025-11-16 12:34 - Code update
 
 function getDiaryByChainId(chainId?: number): DiaryInfo {
   if (!chainId) {
