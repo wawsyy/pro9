@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-// 2025-11-16 12:33 - Code update
 import { ethers } from "ethers";
 
 import type { FhevmInstance } from "@/fhevm/fhevmTypes";
@@ -16,7 +15,6 @@ type DiaryInfo = {
   chainId?: number;
   chainName?: string;
 };
-// 2025-11-16 12:34 - Code update
 
 function getDiaryByChainId(chainId?: number): DiaryInfo {
   if (!chainId) {
@@ -127,10 +125,9 @@ export function useMoodDiary({
       ]);
 
       let authorisedHandle: string | undefined;
-      if (ethersSigner && diaryInfo.address) {
+      if (contractWithSigner) {
         try {
-          const contractForUser = readonlyContract.connect(ethersSigner);
-          authorisedHandle = await contractForUser.getMyTrendHandle();
+          authorisedHandle = await contractWithSigner.getMyTrendHandle();
         } catch {
           authorisedHandle = undefined;
         }
@@ -145,7 +142,7 @@ export function useMoodDiary({
     } finally {
       setIsRefreshing(false);
     }
-  }, [readonlyContract, ethersSigner, diaryInfo.address]);
+  }, [readonlyContract, contractWithSigner]);
 
   // Refresh stats when contract changes
   useEffect(() => {
