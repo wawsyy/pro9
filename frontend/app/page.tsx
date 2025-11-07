@@ -1,4 +1,6 @@
-﻿"use client";`n`n// Main dashboard component for mood diary
+﻿"use client";
+
+// Main dashboard component for mood diary
 
 import { useMemo, useState } from "react";
 import { useAccount } from "wagmi";

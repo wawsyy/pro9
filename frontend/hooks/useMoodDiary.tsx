@@ -83,7 +83,8 @@ export function useMoodDiary({
   const [isRequestingAccess, setIsRequestingAccess] = useState(false);
   const [isDecrypting, setIsDecrypting] = useState(false);
 
-  // Check if transaction can be executed`n  const isReadyForTx = Boolean(
+  // Check if transaction can be executed
+  const isReadyForTx = Boolean(
     instance &&
       diaryInfo.address &&
       ethersSigner &&
@@ -146,7 +147,8 @@ export function useMoodDiary({
     }
   }, [readonlyContract, ethersSigner, diaryInfo.address]);
 
-  // Refresh stats when contract changes`n  useEffect(() => {
+  // Refresh stats when contract changes
+  useEffect(() => {
     setClearTrend(undefined);
     setMyTrendHandle(undefined);
     setNetworkTrendHandle(undefined);
