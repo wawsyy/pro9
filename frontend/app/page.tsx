@@ -30,11 +30,16 @@ export default function Home() {
     eip1193Provider,
   } = useRainbowSigner();
 
+  // Only use mock chains in development (localhost/hardhat)
+  // In production (Vercel), only use Sepolia testnet
+  const isProduction = process.env.NODE_ENV === "production";
+  const mockChains = isProduction ? undefined : MOCK_CHAINS;
+
   const { instance, status: fheStatus, error: fheError } = useFhevm({
     provider: eip1193Provider,
     chainId,
     enabled: Boolean(eip1193Provider && chainId),
-    initialMockChains: MOCK_CHAINS,
+    initialMockChains: mockChains,
   });
 
   const diary = useMoodDiary({
@@ -234,6 +239,11 @@ export default function Home() {
           {diary.message && (
             <div className="rounded-2xl border border-white/15 bg-white/5 p-4 text-sm text-slate-100">
               {diary.message}
+            </div>
+          )}
+          {chainId && chainId !== 11155111 && chainId !== 31337 && (
+            <div className="rounded-2xl border border-yellow-400/30 bg-yellow-400/10 p-4 text-sm text-yellow-100">
+              ⚠️ Please switch to Sepolia testnet (Chain ID: 11155111) to use this application.
             </div>
           )}
           {fheError && (
