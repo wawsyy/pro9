@@ -278,9 +278,15 @@ export function useMoodDiary({
         signature.durationDays,
       );
 
+      const decryptedValue = result[myTrendHandle];
+      if (typeof decryptedValue === "boolean") {
+        setMessage("Decryption returned unexpected boolean value.");
+        return;
+      }
+
       setClearTrend({
         handle: myTrendHandle,
-        clear: result[myTrendHandle],
+        clear: decryptedValue,
       });
       setMessage("Average decrypted locally.");
     } catch (error) {
