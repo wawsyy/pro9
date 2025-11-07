@@ -17,12 +17,11 @@ const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ?? "encrypted
 // In production (Vercel), only support Sepolia testnet
 // In development, support both hardhat and sepolia
 const isProduction = process.env.NODE_ENV === "production";
-const supportedChains = isProduction ? [sepolia] : [hardhat, sepolia];
 
 const wagmiConfig = getDefaultConfig({
   appName: "Encrypted Mood Diary",
   projectId,
-  chains: supportedChains,
+  chains: isProduction ? [sepolia] : [hardhat, sepolia],
   ssr: true,
 });
 
